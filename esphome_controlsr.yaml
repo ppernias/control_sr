@@ -1,0 +1,30 @@
+substitutions:
+  device_name: “CHANGEME”
+  room: “CHANGEME”
+  ip: CHANGEME
+  gateway: CHANGEME
+  dns: CHANGEME
+  subnet: CHANGEME
+  addr1: “CHANGEME”
+  addr2: “CHANGEME”
+  
+#### general for esphome
+  web_password: !secret tasmota_password
+  web_user: !secret tasmota_user
+  wifi_password: !secret wifi_password
+  wifi_ssid: !secret wifi_ssid
+  ota_password: !secret ota_password   
+  ap_password: !secret tasmota_password
+
+
+##### DO NOT CHANGE ANYTHING! #####
+
+packages:
+  ##### download esphome code from Github
+  remote_package:
+    url: https://github.com/ppernias/control_sr
+    ref: master
+    files: [controlsr.yaml]
+    refresh: 300s
+
+##### DO NOT CHANGE ANYTHING! #####

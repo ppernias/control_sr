@@ -1,0 +1,132 @@
+esphome:
+  name: ${device_name}${room}
+
+esp32:
+  board: wemos_d1_mini32
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+api:
+
+
+# ESP Restart button
+button:
+  - platform: restart
+    name: ${device_name}${room} restart 
+    id: restart_${device_name}${room}
+
+ota:
+  password: $ota_password
+
+wifi:
+  ssid: $wifi_ssid
+  password: $wifi_password
+  #fast_connect: on
+  manual_ip:
+    static_ip: $ip
+    gateway: $gateway
+    subnet: $subnet
+    dns1: $dns
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: ${device_name}_$room
+    password: $ap_password
+
+captive_portal:
+
+web_server:
+  port: 80
+  auth:
+    username: ${web_user}
+    password: ${web_password}
+
+dallas:
+  - pin: GPIO5
+    update_interval: 10s
+
+sensor:
+    - platform: wifi_signal
+      name: ${device_name}_${room}_wifi
+      update_interval: 60s
+
+    - platform: dallas
+      address: $addr1
+      name: ${device_name}_${room}_t1
+      accuracy_decimals: 1
+      device_class: "temperature"
+      state_class: "measurement"
+      unit_of_measurement: "°C"
+      filters:
+        - filter_out: NAN       
+    - platform: dallas
+      address: $addr2
+      name: ${device_name}_${room}_t2
+      accuracy_decimals: 1
+      device_class: "temperature"
+      state_class: "measurement"
+      unit_of_measurement: "°C"    
+      filters:
+        - filter_out: NAN    
+
+switch:
+  - platform: gpio
+    id: ${device_name}_${room}_1
+    name: ${device_name}_${room}_1
+    pin: GPIO16
+    inverted: True
+    restore_mode: ALWAYS_ON
+    icon: "mdi:power"
+  - platform: gpio
+    id: ${device_name}_${room}_2
+    name: ${device_name}_${room}_2
+    pin: GPIO17
+    inverted: True
+    restore_mode: RESTORE_DEFAULT_OFF 
+    icon: "mdi:radiator" 
+  - platform: gpio
+    id: ${device_name}_${room}_3
+    name: ${device_name}_${room}_3
+    pin: GPIO21
+    inverted: True
+    restore_mode: RESTORE_DEFAULT_OFF
+    icon: "mdi:radiator"
+  - platform: gpio
+    id: ${device_name}_${room}_4
+    name: ${device_name}_${room}_4
+    pin: GPIO22
+    inverted: True
+    restore_mode: RESTORE_DEFAULT_OFF
+    icon: "mdi:radiator"
+
+  - platform: gpio
+    id: ${device_name}_${room}_5
+    name: ${device_name}_${room}_5
+    pin: GPIO26
+    inverted: True
+    restore_mode: RESTORE_DEFAULT_OFF
+    icon: "mdi:radiator"
+  - platform: gpio
+    id: ${device_name}_${room}_6
+    name: ${device_name}_${room}_6
+    pin: GPIO18
+    inverted: True
+    restore_mode: RESTORE_DEFAULT_OFF 
+    icon: "mdi:radiator" 
+  - platform: gpio
+    id: ${device_name}_${room}_7
+    name: ${device_name}_${room}_7
+    pin: GPIO19
+    inverted: True
+    restore_mode: RESTORE_DEFAULT_OFF
+    icon: "mdi:radiator"
+  - platform: gpio
+    id: ${device_name}_${room}_8
+    name: ${device_name}_${room}_8
+    pin: GPIO23
+    inverted: True
+    restore_mode: RESTORE_DEFAULT_OFF
+    icon: "mdi:radiator" 
