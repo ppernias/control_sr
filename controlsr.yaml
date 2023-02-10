@@ -45,7 +45,7 @@ web_server:
     password: ${web_password}
 
 dallas:
-  - pin: GPIO5
+  - pin: $dallas_gpio
     update_interval: 10s
 
 sensor:
