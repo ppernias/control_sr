@@ -45,8 +45,7 @@ web_server:
     password: ${web_password}
 
 dallas:
-  - pin: $dallas_gpio
-    update_interval: 15s
+  - pin: ${dallas_gpio}
 
 sensor:
     - platform: wifi_signal
@@ -54,7 +53,7 @@ sensor:
       update_interval: 60s
 
     - platform: dallas
-      address: $addr1
+      address: ${addr1}
       name: ${device_name}_${room}_t1
       accuracy_decimals: 1
       device_class: "temperature"
