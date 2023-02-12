@@ -47,17 +47,17 @@ web_server:
 dallas:
   - pin: ${dallas_gpio}
 
-sensor:
+#sensor:
     - platform: wifi_signal
       name: ${device_name}_${room}_wifi
       update_interval: 60s
 
-    - platform: dallas
-      address: ${addr1}
-      name: ${device_name}_${room}_t1   
-    - platform: dallas
-      address: ${addr2}
-      name: ${device_name}_${room}_t2   
+#    - platform: dallas
+#      address: $addr1
+#      name: ${device_name}_${room}_t1   
+#    - platform: dallas
+#      address: $addr2
+#      name: ${device_name}_${room}_t2   
 
 switch:
   - platform: gpio
