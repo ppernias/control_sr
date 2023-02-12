@@ -96,24 +96,3 @@ switch:
     inverted: True
     restore_mode: RESTORE_DEFAULT_OFF
     icon: "mdi:radiator"
-  - platform: gpio
-    id: ${device_name}_${room}_6
-    name: ${device_name}_${room}_6
-    pin: GPIO18
-    inverted: True
-    restore_mode: RESTORE_DEFAULT_OFF 
-    icon: "mdi:radiator" 
-  - platform: gpio
-    id: ${device_name}_${room}_7
-    name: ${device_name}_${room}_7
-    pin: GPIO19
-    inverted: True
-    restore_mode: RESTORE_DEFAULT_OFF
-    icon: "mdi:radiator"
-  - platform: gpio
-    id: ${device_name}_${room}_8
-    name: ${device_name}_${room}_8
-    pin: GPIO23
-    inverted: True
-    restore_mode: RESTORE_DEFAULT_OFF
-    icon: "mdi:radiator" 
