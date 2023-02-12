@@ -4,9 +4,11 @@ substitutions:
   ip: CHANGEME
   gateway: CHANGEME
   dns: CHANGEME
+  dallas_gpio: CHANGEME
   subnet: CHANGEME
   addr1: “CHANGEME”
   addr2: “CHANGEME”
+
   
 #### general for esphome
   web_password: !secret tasmota_password

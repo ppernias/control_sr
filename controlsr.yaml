@@ -54,22 +54,10 @@ sensor:
 
     - platform: dallas
       address: ${addr1}
-      name: ${device_name}_${room}_t1
-      accuracy_decimals: 1
-      device_class: "temperature"
-      state_class: "measurement"
-      unit_of_measurement: "°C"
-      filters:
-        - filter_out: NAN       
-#    - platform: dallas
-#      address: $addr2
-#      name: ${device_name}_${room}_t2
-#      accuracy_decimals: 1
-#      device_class: "temperature"
-#      state_class: "measurement"
-#      unit_of_measurement: "°C"    
-#      filters:
-#        - filter_out: NAN    
+      name: ${device_name}_${room}_t1   
+    - platform: dallas
+      address: $addr2
+      name: ${device_name}_${room}_t2   
 
 switch:
   - platform: gpio
