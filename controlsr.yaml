@@ -56,7 +56,7 @@ sensor:
       address: ${addr1}
       name: ${device_name}_${room}_t1   
     - platform: dallas
-      address: $addr2
+      address: ${addr2}
       name: ${device_name}_${room}_t2   
 
 switch:
