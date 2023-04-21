@@ -11,7 +11,7 @@ logger:
 
 api:
   encryption:
-    key: ${api_password}
+    key: $api_password
 
 # ESP Restart button
 button:
