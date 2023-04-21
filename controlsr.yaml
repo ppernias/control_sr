@@ -10,7 +10,8 @@ esp32:
 logger:
 
 api:
-
+  encryption:
+    key: ${api_password}
 
 # ESP Restart button
 button:
